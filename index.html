@@ -1,52 +1,52 @@
 <html>
 
 <head>
-    <!-- ĞÂ Bootstrap ºËĞÄ CSS ÎÄ¼ş -->
+    <!-- æ–° Bootstrap æ ¸å¿ƒ CSS æ–‡ä»¶ -->
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <!-- ¿ÉÑ¡µÄBootstrapÖ÷ÌâÎÄ¼ş£¨Ò»°ã²»ÓÃÒıÈë£© -->
+    <!-- å¯é€‰çš„Bootstrapä¸»é¢˜æ–‡ä»¶ï¼ˆä¸€èˆ¬ä¸ç”¨å¼•å…¥ï¼‰ -->
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <!-- jQueryÎÄ¼ş¡£Îñ±ØÔÚbootstrap.min.js Ö®Ç°ÒıÈë -->
+    <!-- jQueryæ–‡ä»¶ã€‚åŠ¡å¿…åœ¨bootstrap.min.js ä¹‹å‰å¼•å…¥ -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-    <!-- ×îĞÂµÄ Bootstrap ºËĞÄ JavaScript ÎÄ¼ş -->
+    <!-- æœ€æ–°çš„ Bootstrap æ ¸å¿ƒ JavaScript æ–‡ä»¶ -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script>
     var addTab = function(obj) {
         var id = "tab_" + obj.id;
         $(".active").removeClass("active");
-        //Èç¹ûTAB²»´æÔÚ£¬´´½¨Ò»¸öĞÂµÄTAB
+        //å¦‚æœTABä¸å­˜åœ¨ï¼Œåˆ›å»ºä¸€ä¸ªæ–°çš„TAB
         if (!$("#" + id)[0]) {
-            //¹Ì¶¨TABÖĞIFRAME¸ß¶È
+            //å›ºå®šTABä¸­IFRAMEé«˜åº¦
             mainHeight = 100;
-            //´´½¨ĞÂTABµÄtitle
+            //åˆ›å»ºæ–°TABçš„title
             title = '<li role="presentation" id="tab_' + id + '"><a href="#' + id + '" aria-controls="' + id + '" role="tab" data-toggle="tab">' + obj.title;
-            //ÊÇ·ñÔÊĞí¹Ø±Õ
+            //æ˜¯å¦å…è®¸å…³é—­
             if (obj.close) {
                 title += ' <i class="tabclose" tabclose="' + id + '"><span class="glyphicon glyphicon-remove"></span></i>';
             }
             title += '</a></li>';
-            //ÊÇ·ñÖ¸¶¨TABÄÚÈİ
+            //æ˜¯å¦æŒ‡å®šTABå†…å®¹
             if (obj.content) {
                 content = '<div role="tabpanel" class="tab-pane" id="' + id + '">' + obj.content + '</div>';
-            } else { //Ã»ÓĞÄÚÈİ£¬Ê¹ÓÃIFRAME´ò¿ªÁ´½Ó
+            } else { //æ²¡æœ‰å†…å®¹ï¼Œä½¿ç”¨IFRAMEæ‰“å¼€é“¾æ¥
                 content = '<div role="tabpanel" height="100%" width="100%" class="tab-pane" id="' + id + '"><iframe src="' + obj.url + '" width="100%" height="' + mainHeight +
                     '%" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe></div>';
             }
-            //¼ÓÈëTABS
+            //åŠ å…¥TABS
             $(".nav-tabs").append(title);
             $(".tab-content").append(content);
         }
-        //¼¤»îTAB
+        //æ¿€æ´»TAB
         $("#tab_" + id).addClass('active');
         $("#" + id).addClass("active");
     };
 
     var closeTab = function(id) {
-        //Èç¹û¹Ø±ÕµÄÊÇµ±Ç°¼¤»îµÄTAB£¬¼¤»îËûµÄÇ°Ò»¸öTAB
+        //å¦‚æœå…³é—­çš„æ˜¯å½“å‰æ¿€æ´»çš„TABï¼Œæ¿€æ´»ä»–çš„å‰ä¸€ä¸ªTAB
         if ($("li.active").attr('id') == "tab_" + id) {
             $("#tab_" + id).prev().addClass('active');
             $("#" + id).prev().addClass('active');
         }
-        //¹Ø±ÕTAB
+        //å…³é—­TAB
         $("#tab_" + id).remove();
         $("#" + id).remove();
     };
@@ -77,7 +77,7 @@
 </head>
 
 <body>
-    <span id="addnew">ĞÂÔöÒ»¸ötab</span>
+    <span id="addnew">æ–°å¢ä¸€ä¸ªtab</span>
     <div role="tabpanel">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist" id="myTab">
